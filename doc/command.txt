@@ -1,0 +1,6 @@
+/* Создание таблицы */
+create table <name> (<type> <name>, ..., <type> <name>);
+
+insert <table_name> (<name>, ..., <name>) values (<value>, ..., <value>);
+
+select from <table_name> <col_name>, ..., <col_name>;
