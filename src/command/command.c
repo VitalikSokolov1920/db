@@ -36,6 +36,13 @@ int parse_command(char* cmd) {
     if (!cmd_parts) {
         return -1;
     }
+    #define PRINT_INFO 1
+    #if PRINT_INFO
+    printf("len = %lu\n", parts_amount);
+    for(int i = 0; i < parts_amount; i++) {
+        printf("|%s| ", *(cmd_parts + i));
+    }
+    #endif
 
     construct_command(cmd_parts, parts_amount);
 

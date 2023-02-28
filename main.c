@@ -16,7 +16,7 @@ void f() {    //012345678901234567
 
 int main(int agrc, char* argv[]) {
 #if DEBUG
-    f();
+    // f();
 #endif
 #if !DEBUG
     init();

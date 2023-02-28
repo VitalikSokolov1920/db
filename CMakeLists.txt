@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(main)
 
-add_compile_options(-g -O0)
+add_compile_options(-g -O0 -W)
 
 add_executable(${PROJECT_NAME} 
     main.c

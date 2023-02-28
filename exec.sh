@@ -8,4 +8,6 @@ cmake ..
 
 cmake --build .
 
-./main
+if [[ $* == "-e" ]]; then
+    ./main
+fi

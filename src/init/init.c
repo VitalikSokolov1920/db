@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <fcntl.h>
 
 #include "init.h"
 #include "../command/command.h"
@@ -111,19 +112,15 @@ int console_exec() {
 
         input = (char*)malloc(CMD_INPUT_SIZE);
 
-        ret = scanf("%s", input);
+        fgets(input, CMD_INPUT_SIZE, stdin);
 
-        if (ret) {
-            if (!strlen(input)) {
-                printf("Введена пустая команда\n");
+        if (!strlen(input)) {
+            printf("Введена пустая команда\n");
+            
+            break;
+        } 
 
-                break;
-            } 
-
-            parse_command(input);
-        } else {
-            printf("Ошибка ввода, повторите ввод\n");
-        }
+        parse_command(input);
     }
     
     free(input);

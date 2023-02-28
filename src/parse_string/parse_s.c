@@ -36,7 +36,7 @@ char** split(const char* str, size_t len, const char split_by, size_t* res_len) 
     }
 
     if (real_len < *res_len) {
-        res = realloc(res, sizeof(char*) * real_len + 1);
+        res = realloc(res, sizeof(char*) * real_len);
 
         *res_len = real_len;
     }
